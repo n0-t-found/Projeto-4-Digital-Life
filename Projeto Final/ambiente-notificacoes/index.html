@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page with Notifications</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+</head>
+<body>
+
+    <h1>Welcome to the Home Page</h1>
+    <p>Enjoy browsing!</p>
+
+    <!-- Notification for writing assistance -->
+    <div id="notification" class="notification">
+        <p>I noticed you are writing about (blabla). Do you need help writing the text?</p>
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+    </div>
+
+    <!-- Notifications for topics -->
+    <div id="topicNotifications" class="notification-container">
+        <!-- Each topic notification will be generated here -->
+    </div>
+
+    <!-- Shikin Offer Notification -->
+    <div id="shikinNotification" class="shikin-notification">
+        <span class="close-button" id="closeShikinNotification">&times;</span> <!-- Close button -->
+        <p>🚨 Don't lose this offer right now! 🚨</p>
+        <p>🔥 99% Sales!! 🔥</p>
+    </div>
+
+    <!-- Virus Alert Notification -->
+    <div id="virusNotification" class="virus-notification">
+        <span class="close-button" id="closeVirusNotification">&times;</span> <!-- Close button -->
+        <p>Believe it or not, you have been selected among 284982874875782 to receive a super phone!</p>
+        <button id="acceptOfferButton">Accept the Offer</button> <!-- Accept Offer button -->
+    </div>
+
+    <!-- Meteorology Notification -->
+    <div id="meteorologyNotification" class="meteorology-notification">
+        <span class="close-button" id="closeMeteorologyNotification">&times;</span> <!-- Close button -->
+        <p>🌧️ Weather Alert! Don't forget your umbrella!</p>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>
+
+

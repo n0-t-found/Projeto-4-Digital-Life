@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Desktop Simulation</title>
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="folder" onclick="toggleImages(event, this)">
+        <img class="folder-icon" src="folder.png" alt="Folder Icon" />
+        <div class="folder-name">Vacation</div>
+        <div class="images">
+          <div class="image" onclick="openModal(event, 'imagens/1.jpg', 0)">
+            <img src="imagens/1.jpg" alt="Image 1" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/2.jpg', 1)">
+            <img src="imagens/2.jpg" alt="Image 2" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/3.jpg', 2)">
+            <img src="imagens/3.jpg" alt="Image 3" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/4.jpg', 3)">
+            <img src="imagens/4.jpg" alt="Image 4" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/5.jpg', 4)">
+            <img src="imagens/5.jpg" alt="Image 5" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/6.jpg', 5)">
+            <img src="imagens/6.jpg" alt="Image 6" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/7.jpg', 6)">
+            <img src="imagens/7.jpg" alt="Image 7" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/8.jpg', 7)">
+            <img src="imagens/8.jpg" alt="Image 8" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/9.jpg', 8)">
+            <img src="imagens/9.jpg" alt="Image 9" />
+          </div>
+          <div class="image" onclick="openModal(event, 'imagens/10.jpg', 9)">
+            <img src="imagens/10.jpg" alt="Image 10" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="imageModal" onclick="closeModal()">
+      <span
+        class="arrow left"
+        onclick="changeImage(-1); event.stopPropagation();"
+        >&#10094;</span
+      >
+      <!-- Left arrow -->
+      <img id="modalImage" src="" alt="Large View" />
+      <span
+        class="arrow right"
+        onclick="changeImage(1); event.stopPropagation();"
+        >&#10095;</span
+      >
+      <!-- Right arrow -->
+    </div>
+
+    <script>
+      let currentImageIndex = 0; // Track the current image index
+      const imageSources = [
+        "imagens/1.jpg",
+        "imagens/2.jpg",
+        "imagens/3.jpg",
+        "imagens/4.jpg",
+        "imagens/5.jpg",
+        "imagens/6.jpg",
+        "imagens/7.jpg",
+        "imagens/8.jpg",
+        "imagens/9.jpg",
+        "imagens/10.jpg",
+      ];
+
+      function toggleImages(event, folder) {
+        event.stopPropagation(); // Prevent the click event from bubbling up
+        const images = folder.querySelector(".images");
+        images.classList.toggle("open"); // Toggle the 'open' class
+      }
+
+      // Open modal with the clicked image
+      function openModal(event, imageSrc, index) {
+        event.stopPropagation(); // Prevent the click event from bubbling up
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        modalImage.src = imageSrc; // Set the source of the modal image
+        modal.style.display = "flex"; // Show the modal
+        currentImageIndex = index; // Set the current image index
+      }
+
+      // Change image in modal
+      function changeImage(direction) {
+        currentImageIndex += direction; // Update the index based on direction
+        if (currentImageIndex < 0) {
+          currentImageIndex = imageSources.length - 1; // Loop to last image
+        } else if (currentImageIndex >= imageSources.length) {
+          currentImageIndex = 0; // Loop to first image
+        }
+        const modalImage = document.getElementById("modalImage");
+        modalImage.src = imageSources[currentImageIndex]; // Update modal image source
+      }
+
+      // Close the modal when clicking outside of the image
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.style.display = "none"; // Hide the modal
+      }
+
+      // Close the folder if clicking outside of it
+      document.addEventListener("click", function (event) {
+        const folder = document.querySelector(".folder");
+        const images = folder.querySelector(".images");
+        if (
+          images.classList.contains("open") &&
+          !folder.contains(event.target)
+        ) {
+          images.classList.remove("open"); // Close the folder
+        }
+      });
+    </script>
+  </body>
+</html>

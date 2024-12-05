@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Notification container styles */
+.notification-container {
+    position: fixed; /* Fixed position */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align items to the right */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Notification styles */
+.notification {
+    display: none; /* Hidden by default */
+    width: 300px; /* Set a width for the notification */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px 0; /* Space between notifications */
+    transition: opacity 0.5s; /* Smooth transition */
+    opacity: 0; /* Start hidden */
+}
+
+/* Show notification when active */
+.notification.active {
+    display: block; /* Ensure it is displayed */
+    opacity: 1; /* Fade in */
+}
+
+/* Notification text styles */
+.notification p {
+    margin: 0 0 10px;
+    color: #555; /* Darker text for better readability */
+}
+
+/* Button styles */
+.readMoreButton {
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.readMoreButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.readMoreButton:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .notification {
+        width: 95%; /* Full width on smaller screens */
+    }
+}
+
+/* Shikin notification styles */
+.shikin-notification {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: 300px; /* Set a width for the notification */
+    background-color: #ffcc00; /* Bright yellow background */
+    border: 2px solid #ff9900; /* Darker border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    padding: 20px;
+    text-align: center; /* Center text */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    z-index: 1001; /* Ensure it appears above other content */
+    animation: shine 1.5s infinite; /* Shine effect */
+}
+
+/* Close button styles */
+.close-button {
+    position: absolute; /* Position relative to the notification */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    font-size: 20px; /* Size of the close button */
+    color: #fcc623; /* Red color for visibility */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Shine effect */
+@keyframes shine {
+    0% {
+        background-color: #ffcc00;
+    }
+    50% {
+        background-color: #fff700; /* Lighter yellow for shine */
+    }
+    100% {
+        background-color: #ffcc00;
+    }
+}
+
+/* Virus alert notification styles */
+.virus-notification {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    width: 300px; /* Set a width for the notification */
+    background-color: #ff4444; /* Bright red background */
+    border: 2px solid #cc0000; /* Darker border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    padding: 20px;
+    text-align: center; /* Center text */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    z-index: 1001; /* Ensure it appears above other content */
+    display: none; /* Hidden by default */
+}
+
+/* Button styles for Accept Offer - virus notification */
+#acceptOfferButton {
+    background-color: #ff4444; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+    margin-top: 10px; /* Space above the button */
+}
+
+#acceptOfferButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Close button styles */
+.close-button {
+    position: absolute; /* Position relative to the notification */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    font-size: 20px; /* Size of the close button */
+    color: #ff0000; /* Red color for visibility */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Meteorology notification styles */
+.meteorology-notification {
+    position: fixed; /* Fixed position */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    width: 300px; /* Set a width for the notification */
+    background-color: #007BFF; /* Bright blue background */
+    border: 2px solid #0056b3; /* Darker blue border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    padding: 20px;
+    text-align: center; /* Center text */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    z-index: 1001; /* Ensure it appears above other content */
+    display: none; /* Hidden by default */
+}
+
+/* Close button styles */
+.close-button {
+    position: absolute; /* Position relative to the notification */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    font-size: 20px; /* Size of the close button */
+    color: #ff0000; /* Red color for visibility */
+    cursor: pointer; /* Pointer cursor on hover */
+}

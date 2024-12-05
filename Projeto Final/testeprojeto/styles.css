@@ -1,0 +1,85 @@
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 800px;
+  height: 600px;
+  border: 2px solid #000;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+#notification {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 10;
+}
+
+#game-area {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 80px;
+  width: 100%;
+  height: 500px;
+  background-color: #f0f0f0;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  margin: 10px;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+#folder1 {
+  top: 50px;
+  left: 50px;
+}
+
+#folder2 {
+  top: 50px;
+  left: 150px;
+}
+
+#game-icon {
+  top: 150px;
+  left: 50px;
+}
+
+#writing-box {
+  width: 400px;
+  height: 500px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#okay-button,
+#not-now-button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+}

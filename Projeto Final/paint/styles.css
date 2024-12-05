@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+}
+
+.app-container {
+  border: 2px solid #000;
+  width: 800px;
+  height: 600px;
+  background-color: #007bff;
+  position: relative;
+}
+
+.toolbar {
+  background-color: #f8d7da;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.color-palette {
+  display: flex;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.beige {
+  background-color: #f8d7da;
+}
+.blue {
+  background-color: blue;
+}
+.black {
+  background-color: black;
+}
+
+canvas {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: white;
+  cursor: crosshair;
+}

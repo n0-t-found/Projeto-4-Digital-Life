@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="notification" class="hidden">
+        <p>
+          Useless updates available - Do you want to stop working to install
+          these not significant updates now?
+        </p>
+        <button id="okay-button">Okay :/</button>
+        <button id="not-now-button">Not now!</button>
+      </div>
+      <div id="game-area">
+        <div class="icon" id="folder1">📁 Folder 1</div>
+        <div class="icon" id="folder2">📁 Folder 2</div>
+        <div class="icon" id="game-icon">🎮 Game Icon</div>
+      </div>
+      <textarea
+        id="writing-box"
+        placeholder="Write your text here..."
+      ></textarea>
+    </div>
+    <script>
+      window.onload = function () {
+        document.getElementById("notification").classList.remove("hidden");
+      };
+
+      document.getElementById("okay-button").onclick = function () {
+        alert("You chose to install the useless updates.");
+        // Add logic to handle the okay action
+      };
+
+      document.getElementById("not-now-button").onclick = function () {
+        document.getElementById("notification").classList.add("hidden");
+      };
+    </script>
+  </body>
+</html>
