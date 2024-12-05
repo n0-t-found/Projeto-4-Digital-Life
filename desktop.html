@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Desktop Simulation</title>
+  </head>
+  <body>
+    <div class="desktop">
+      <div id="calendar-container">
+        <img
+          src="calendario/calendi.png"
+          alt="Calendário"
+          id="calendar-image"
+        />
+      </div>
+      <div id="daily-tasks" class="hidden">
+        <h2>Lembretes do calendário:</h2>
+        <ul id="task-list">
+          <li>Tirar o lixo</li>
+          <li>Terminar a tese</li>
+          <li>Comprar mantimentos</li>
+        </ul>
+        <button id="close-tasks">Sair</button>
+      </div>
+      <div id="tese-box">
+        <h3>Texto da tese:</h3>
+        <div class="caixa-tese" id="caixaTese">
+        <!-- O texto da tese aparecerá aqui -->
+    </div>
+    <button id="botaoEscrever">Escrever texto</button>
+  
+        <textarea id="reminders" readonly></textarea>
+      </div>
+      <div class="folder" onclick="toggleImages(event, this)">
+        <img class="folder-icon" src="pasta.png" alt="Folder Icon" />
+        <div class="folder-name">Vacation</div>
+        <div class="images">
+          <div class="images-header">
+            Vacation Photos
+            <span class="close-button" onclick="closeImages()">✖</span>
+          </div>
+          <div class="images-content">
+            <div class="image" onclick="openModal(event, 'imagens/1.jpg', 0)">
+              <img src="imagens/1.jpg" alt="Image 1" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/2.jpg', 1)">
+              <img src="imagens/2.jpg" alt="Image 2" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/3.jpg', 2)">
+              <img src="imagens/3.jpg" alt="Image 3" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/4.jpg', 3)">
+              <img src="imagens/4.jpg" alt="Image 4" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/5.jpg', 4)">
+              <img src="imagens/5.jpg" alt="Image 5" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/6.jpg', 5)">
+              <img src="imagens/6.jpg" alt="Image 6" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/7.jpg', 6)">
+              <img src="imagens/7.jpg" alt="Image 7" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/8.jpg', 7)">
+              <img src="imagens/8.jpg" alt="Image 8" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/9.jpg', 8)">
+              <img src="imagens/9.jpg" alt="Image 9" />
+            </div>
+            <div class="image" onclick="openModal(event, 'imagens/10.jpg', 9)">
+              <img src="imagens/10.jpg" alt="Image 10" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-container">
+        <div class="toolbar">
+          <button id="clear">⟳</button>
+          <div class="color-palette">
+            <div class="color red" data-color="red"></div>
+            <div class="color yellow" data-color="yellow"></div>
+            <div class="color beige" data-color="#f8d7da"></div>
+            <div class="color blue" data-color="blue"></div>
+            <div class="color black" data-color="black"></div>
+          </div>
+        </div>
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <div
+        id="duolingo-icon"
+        class="duolingo-app"
+        onclick="openDuolingoLesson()"
+      >
+        <img src="duolingo.png" alt="Duolingo" />
+        <div class="duolingo-icon"></div>
+        <div class="duolingo-name"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="duolingoModal">
+      <div class="modal-content">
+        <span class="close-button">✖</span>
+        <h2>French Lesson</h2>
+        <div id="question-container">
+          <p id="question-text"></p>
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="imageModal">
+      <span class="close-modal" onclick="closeModal()">✖</span>
+      <span
+        class="arrow left"
+        onclick="changeImage(-1); event.stopPropagation();"
+        >&#10094;</span
+      >
+      <!-- Left arrow -->
+      <img id="modalImage" src="" alt="Large View" />
+      <span
+        class="arrow right"
+        onclick="changeImage(1); event.stopPropagation();"
+        >&#10095;</span
+      >
+      <!-- Right arrow -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
